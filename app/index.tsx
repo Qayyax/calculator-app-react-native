@@ -1,10 +1,11 @@
-import { Text, View, StyleSheet } from "react-native";
+import { Text, StyleSheet } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Index() {
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <Text style={styles.textStyle}>Edit app/index.tsx to edit this screen.</Text>
-    </View>
+    </SafeAreaView>
   );
 }
 
@@ -12,8 +13,8 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: "#000000",
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center'
+    // alignItems: 'center',
+    // justifyContent: 'center'
   },
   textStyle: {
     color: '#fff',
