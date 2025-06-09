@@ -1,10 +1,25 @@
-import { Text, StyleSheet } from "react-native";
+import Button from "@/components/Button";
+import { Text, StyleSheet, FlatList, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Index() {
+  const mockData = [
+    { label: "1", color: 'blue' },
+    { label: "2", color: 'grey' },
+    { label: "3", color: 'grey' },
+    { label: "4", color: 'grey' },
+    { label: "5", color: 'grey' },
+    { label: "6", color: 'grey' },
+    { label: "7", color: 'grey' },
+  ]
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.textStyle}>Edit app/index.tsx to edit this screen.</Text>
+      <View style={styles.buttonContainer}>
+        {mockData && mockData.map(item => (
+          <Button key={item.label} text={item.label} color={item.color} onPress={() => alert('I was clicked')} />
+        ))}
+      </View>
     </SafeAreaView>
   );
 }
@@ -18,6 +33,10 @@ const styles = StyleSheet.create({
   },
   textStyle: {
     color: '#fff',
+  },
+  buttonContainer: {
+    flexDirection: 'row',
+    gap: 10
   }
 })
 
