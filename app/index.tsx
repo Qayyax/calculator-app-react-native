@@ -1,4 +1,5 @@
 import Button from "@/components/Button";
+import Hamburger from "@/components/Hamburder";
 import { Text, StyleSheet, FlatList, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
@@ -15,10 +16,13 @@ export default function Index() {
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.textStyle}>Edit app/index.tsx to edit this screen.</Text>
-      <View style={styles.buttonContainer}>
-        {mockData && mockData.map(item => (
-          <Button key={item.label} text={item.label} color={item.color} onPress={() => alert('I was clicked')} />
-        ))}
+      <Hamburger onPress={() => alert('I was clicked')} />
+      <View style={styles.allButtonContainer}>
+        <View style={styles.buttonContainer}>
+          {mockData && mockData.map(item => (
+            <Button key={item.label} text={item.label} color={item.color} onPress={() => alert('I was clicked')} />
+          ))}
+        </View>
       </View>
     </SafeAreaView>
   );
@@ -28,16 +32,22 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: "#000000",
     flex: 1,
-    // alignItems: 'center',
-    // justifyContent: 'center'
   },
   textStyle: {
     color: '#fff',
   },
   buttonContainer: {
     flexDirection: 'row',
-    gap: 10
+    gap: 10,
+    flexWrap: 'wrap',
+  },
+  allButtonContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingHorizontal: 10
   }
+
 })
 
 
