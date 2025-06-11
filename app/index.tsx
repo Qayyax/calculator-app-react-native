@@ -6,12 +6,23 @@ import { SafeAreaView } from "react-native-safe-area-context";
 export default function Index() {
   const mockData = [
     { label: "1", type: 'primary' },
-    { label: "2", type: 'operators' },
+    { label: "2", type: 'primary' },
     { label: "3", type: 'primary' },
     { label: "4", type: 'primary' },
-    { label: "5", type: 'special-function' },
+    { label: "5", type: 'primary' },
     { label: "6", type: 'primary' },
     { label: "7", type: 'primary' },
+    { label: "8", type: 'primary' },
+    { label: "9", type: 'primary' },
+    { label: "0", type: 'primary' },
+    { label: "\u{00F7}", type: 'operators' },
+    { label: "\u{00D7}", type: 'operators' },
+    { label: "-", type: 'operators' },
+    { label: "+", type: 'operators' },
+    { label: "=", type: 'operators' },
+    { label: "AC", type: 'special-function' },
+    { label: "\u{207A} \u{2215} \u{208B}", type: 'special-function' },
+    { label: "%", type: 'special-function' },
   ]
 
   // the whole page is a flex box
@@ -19,8 +30,9 @@ export default function Index() {
   // would break this index page as well into components
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.textStyle}>Edit app/index.tsx to edit this screen.</Text>
+      {/* top half 1/3 */}
       <Hamburger onPress={() => alert('I was clicked')} />
+      {/* 2/3 */}
       <View style={styles.allButtonContainer}>
         <View style={styles.buttonContainer}>
           {mockData && mockData.map(item => (

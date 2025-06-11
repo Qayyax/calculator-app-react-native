@@ -9,7 +9,7 @@ type Props = {
 // rename this component 
 // Change from color to type = 'Primary' | 'Secondary' | 'Function' >> something like that
 export default function Button({ text, onPress, type }: Props) {
-  const bgColor = type === 'primary' ? '#1B1A18' : type === 'operators' ? '#544D45' : '#DE8D24';
+  const bgColor = type === 'primary' ? '#1B1A18' : type === 'operators' ? '#DE8D24' : '#544D45';
   return (
     <Pressable
       onPress={onPress}
