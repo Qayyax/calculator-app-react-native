@@ -3,7 +3,7 @@ import { StyleSheet, Pressable, Text } from "react-native";
 type Props = {
   text: string;
   onPress: () => void
-  type: 'primary' | 'operators' | 'special-function';
+  type: 'primary' | 'operators' | 'specialOperators';
 }
 
 // rename this component 

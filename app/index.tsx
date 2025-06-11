@@ -20,9 +20,9 @@ export default function Index() {
     { label: "-", type: 'operators' },
     { label: "+", type: 'operators' },
     { label: "=", type: 'operators' },
-    { label: "AC", type: 'special-function' },
-    { label: "\u{207A} \u{2215} \u{208B}", type: 'special-function' },
-    { label: "%", type: 'special-function' },
+    { label: "AC", type: 'specialOperators' },
+    { label: "\u{207A} \u{2215} \u{208B}", type: 'specialOperators' },
+    { label: "%", type: 'specialOperators' },
   ]
 
   // the whole page is a flex box
@@ -36,7 +36,7 @@ export default function Index() {
       <View style={styles.allButtonContainer}>
         <View style={styles.buttonContainer}>
           {mockData && mockData.map(item => (
-            <Button key={item.label} text={item.label} type={item.type as 'primary' | 'operators' | 'special-function'} onPress={() => alert('I was clicked')} />
+            <Button key={item.label} text={item.label} type={item.type as 'primary' | 'operators' | 'specialOperators'} onPress={() => alert('I was clicked')} />
           ))}
         </View>
       </View>
