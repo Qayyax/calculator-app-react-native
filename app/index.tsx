@@ -24,7 +24,6 @@ export default function Index() {
     { label: "\u{207A} \u{2215} \u{208B}", type: 'specialOperators' },
     { label: "%", type: 'specialOperators' },
   ]
-
   // the whole page is a flex box
   // flex 1/3 something like that
   // would break this index page as well into components

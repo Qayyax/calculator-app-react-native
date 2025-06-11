@@ -1,4 +1,8 @@
-const data = [
+interface Btn {
+  label: string;
+  type: 'primary' | 'operators' | 'specialOperators';
+}
+const data: Btn[] = [
   { label: "1", type: 'primary' },
   { label: "2", type: 'primary' },
   { label: "3", type: 'primary' },
@@ -16,9 +20,9 @@ const data = [
   { label: "-", type: 'operators' },
   { label: "+", type: 'operators' },
   { label: "=", type: 'operators' },
-  { label: "AC", type: 'special-function' },
-  { label: "\u{207A} \u{2215} \u{208B}", type: 'special-function' },
-  { label: "%", type: 'special-function' },
+  { label: "AC", type: 'specialOperators' },
+  { label: "\u{207A} \u{2215} \u{208B}", type: 'specialOperators' },
+  { label: "%", type: 'specialOperators' },
 ];
 
 const getPrimary = () => {
@@ -32,8 +36,9 @@ const getOperators = () => {
 }
 
 const getSpecOps = () => {
-  const filteredOps = data.filter(item => item.type === 'operators');
+  const filteredOps = data.filter(item => item.type === 'specialOperators');
   return filteredOps;
 }
 
+// console.log(getSpecOps())
 export { getPrimary, getOperators, getSpecOps };
