@@ -3,14 +3,17 @@ import { StyleSheet, Pressable, Text } from "react-native";
 type Props = {
   text: string;
   onPress: () => void
-  color: string;
+  type: 'primary' | 'operators' | 'special-function';
 }
 
-export default function Button({ text, onPress, color }: Props) {
+// rename this component 
+// Change from color to type = 'Primary' | 'Secondary' | 'Function' >> something like that
+export default function Button({ text, onPress, type }: Props) {
   return (
     <Pressable
       onPress={onPress}
-      style={[styles.buttonContainer, { backgroundColor: color }]}
+      // depending on the type, the backgroud color would be selected
+      style={[styles.buttonContainer]}
     >
       <Text style={styles.text}>{text}</Text>
     </Pressable>
