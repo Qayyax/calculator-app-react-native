@@ -1,15 +1,16 @@
-import { getPrimary } from "@/util/data"
+import { getOperators } from "@/util/data"
 import { View } from "react-native"
 import Button from "../Button"
 
-export default function PrimaryBtnContainer() {
-  const primaryBtns = getPrimary()
+export default function OperatorsBtnContainer() {
+  const operatorBtns = getOperators()
   // needs styling
   return (
     <View>
-      {primaryBtns && primaryBtns.map(item => (
+      {operatorBtns && operatorBtns.map(item => (
         <Button key={item.label} text={item.label} type={item.type} onPress={() => alert('I was clicked')} />
       ))}
     </View>
   )
 }
+
