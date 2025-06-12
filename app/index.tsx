@@ -14,7 +14,7 @@ export default function Index() {
       {/* top half 1/3 */}
       <Hamburger onPress={() => alert('I was clicked')} />
       {/* 2/3 */}
-      <View>
+      <View style={styles.buttonContainer}>
         <View >
           <SpecialOpsBtnContainer />
           <PrimaryBtnContainer />
@@ -32,13 +32,11 @@ const styles = StyleSheet.create({
     backgroundColor: "#000000",
     flex: 1,
   },
-  textStyle: {
-    color: '#fff',
-  },
   buttonContainer: {
-    flexDirection: 'row',
-    gap: 10,
-    flexWrap: 'wrap',
+    // flex: 3,
+    // gap: 10,
+    // flexWrap: 'wrap',
+    // alignItems: 'center',
   },
   allButtonContainer: {
     flex: 1,
