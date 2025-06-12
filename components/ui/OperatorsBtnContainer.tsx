@@ -1,12 +1,11 @@
 import { getOperators } from "@/util/data"
-import { View } from "react-native"
+import { View, StyleSheet } from "react-native"
 import Button from "../Button"
 
 export default function OperatorsBtnContainer() {
   const operatorBtns = getOperators()
-  // needs styling
   return (
-    <View>
+    <View style={styles.container}>
       {operatorBtns && operatorBtns.map(item => (
         <Button key={item.label} text={item.label} type={item.type} onPress={() => alert('I was clicked')} />
       ))}
@@ -14,3 +13,10 @@ export default function OperatorsBtnContainer() {
   )
 }
 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    gap: 10,
+    flexWrap: 'wrap'
+  }
+})
