@@ -32,15 +32,9 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
     borderBlockColor: 'red',
     borderWidth: 2,
+    paddingHorizontal: 5,
   },
 })
-
-
-/*
- * top left has the hamburger
- * bottom half has the screen
- * */
-
 
 /*
  * there is the main screen which is dark right
