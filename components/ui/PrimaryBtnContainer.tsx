@@ -16,7 +16,6 @@ export default function PrimaryBtnContainer() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     flexDirection: 'row',
     gap: 10,
     flexWrap: 'wrap'
