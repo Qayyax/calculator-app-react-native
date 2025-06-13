@@ -30,8 +30,6 @@ const styles = StyleSheet.create({
   buttonContainer: {
     flex: 2,
     justifyContent: 'flex-end',
-    flexGrow: 1,
-    // delete below
     borderBlockColor: 'red',
     borderWidth: 2,
   },

@@ -9,7 +9,6 @@ import Button from "../Button"
 
 export default function BtnsContainer() {
   const btns = getAllButton()
-  console.log(btns)
   return (
     <View style={styles.container}>
       {btns && btns.map(item => (
