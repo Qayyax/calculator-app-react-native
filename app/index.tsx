@@ -1,14 +1,9 @@
 import Hamburger from "@/components/Hamburder";
-import OperatorsBtnContainer from "@/components/ui/OperatorsBtnContainer";
-import PrimaryBtnContainer from "@/components/ui/PrimaryBtnContainer";
-import SpecialOpsBtnContainer from "@/components/ui/SpecialOpsBtnContainer";
+import BtnsContainer from "@/components/ui/BtnContainer";
 import { StyleSheet, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Index() {
-  // the whole page is a flex box
-  // flex 1/3 something like that
-  // would break this index page as well into components
   return (
     <SafeAreaView style={styles.container}>
       {/* top half 1/3 */}
@@ -17,17 +12,12 @@ export default function Index() {
       </View>
       {/* 2/3 */}
       <View style={styles.buttonContainer}>
-        <View style={styles.specAndPrimBtnsContainer}>
-          <SpecialOpsBtnContainer />
-          <PrimaryBtnContainer />
-        </View>
-        <View style={styles.operatorContainer}>
-          <OperatorsBtnContainer />
-        </View>
+        <BtnsContainer />
       </View>
     </SafeAreaView>
   );
 }
+
 
 const styles = StyleSheet.create({
   container: {
@@ -39,30 +29,12 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     flex: 2,
-    alignItems: 'flex-end',
-    justifyContent: 'center',
-    flexDirection: 'row',
+    justifyContent: 'flex-end',
+    flexGrow: 1,
     // delete below
     borderBlockColor: 'red',
     borderWidth: 2,
   },
-  specAndPrimBtnsContainer: {
-    flex: 2,
-    gap: 10,
-    justifyContent: 'center',
-    alignItems: 'center',
-    // delete below
-    borderBlockColor: 'blue',
-    borderWidth: 2,
-  },
-  operatorContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    // delete below
-    borderBlockColor: 'yellow',
-    borderWidth: 2,
-  }
 })
 
 
