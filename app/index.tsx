@@ -39,18 +39,29 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     flex: 2,
-    alignItems: 'center',
+    alignItems: 'flex-end',
     justifyContent: 'center',
     flexDirection: 'row',
-    flexWrap: 'wrap'
-  },
-  specAndPrimBtnsContainer: {
-    flex: 2,
+    // delete below
     borderBlockColor: 'red',
     borderWidth: 2,
   },
+  specAndPrimBtnsContainer: {
+    flex: 2,
+    gap: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
+    // delete below
+    borderBlockColor: 'blue',
+    borderWidth: 2,
+  },
   operatorContainer: {
-    flex: 1
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    // delete below
+    borderBlockColor: 'yellow',
+    borderWidth: 2,
   }
 })
 
