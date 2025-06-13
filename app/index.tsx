@@ -45,7 +45,10 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap'
   },
   specAndPrimBtnsContainer: {
-    flex: 2
+    flex: 4,
+    width: 30,
+    borderBlockColor: 'red',
+    borderWidth: 2
   },
   operatorContainer: {
     flex: 1
