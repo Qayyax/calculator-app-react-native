@@ -13,7 +13,7 @@ export default function Button({ text, onPress, type }: Props) {
   return (
     <Pressable
       onPress={onPress}
-      style={[styles.buttonContainer, { backgroundColor: bgColor, /* width: width / 5 */ }]}
+      style={[styles.buttonContainer, { backgroundColor: bgColor, width: width / 5 }]}
     >
       <Text style={styles.text}>{text}</Text>
     </Pressable>
@@ -23,9 +23,10 @@ export default function Button({ text, onPress, type }: Props) {
 const styles = StyleSheet.create({
   buttonContainer: {
     borderRadius: '40%',
-    paddingVertical: 20,
+    padding: 20,
     alignItems: 'center',
     justifyContent: 'center',
+    margin: 5
   },
   text: {
     color: '#fff',
