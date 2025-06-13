@@ -12,14 +12,16 @@ export default function Index() {
   return (
     <SafeAreaView style={styles.container}>
       {/* top half 1/3 */}
-      <Hamburger onPress={() => alert('I was clicked')} />
+      <View style={styles.hamburger}>
+        <Hamburger onPress={() => alert('I was clicked')} />
+      </View>
       {/* 2/3 */}
       <View style={styles.buttonContainer}>
-        <View >
+        <View style={styles.specAndPrimBtnsContainer}>
           <SpecialOpsBtnContainer />
           <PrimaryBtnContainer />
         </View>
-        <View>
+        <View style={styles.operatorContainer}>
           <OperatorsBtnContainer />
         </View>
       </View>
@@ -32,19 +34,22 @@ const styles = StyleSheet.create({
     backgroundColor: "#000000",
     flex: 1,
   },
-  buttonContainer: {
-    // flex: 3,
-    // gap: 10,
-    // flexWrap: 'wrap',
-    // alignItems: 'center',
+  hamburger: {
+    flex: 1
   },
-  allButtonContainer: {
-    flex: 1,
-    justifyContent: 'center',
+  buttonContainer: {
+    flex: 2,
     alignItems: 'center',
-    paddingHorizontal: 10
+    justifyContent: 'center',
+    flexDirection: 'row',
+    flexWrap: 'wrap'
+  },
+  specAndPrimBtnsContainer: {
+    flex: 2
+  },
+  operatorContainer: {
+    flex: 1
   }
-
 })
 
 

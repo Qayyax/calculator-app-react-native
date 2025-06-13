@@ -16,7 +16,6 @@ export default function OperatorsBtnContainer() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection: 'column',
     gap: 10,
     flexWrap: 'wrap'
   }
