@@ -6,6 +6,7 @@ type Props = {
 
 export default function OutputView({ value }: Props) {
   return (
+    // need to chage to FlatList for better view
     <ScrollView contentContainerStyle={styles.container} horizontal>
       <Text style={styles.text}>{value}</Text>
     </ScrollView>

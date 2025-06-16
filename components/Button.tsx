@@ -11,6 +11,7 @@ export default function Button({ text, onPress, type }: Props) {
   const { width } = useWindowDimensions();
 
   return (
+    // maybe change to touchable
     <Pressable
       onPress={() => onPress(text)}
       style={[styles.buttonContainer, { backgroundColor: bgColor, width: width / 5 }]}

@@ -10,7 +10,11 @@ export default function Index() {
   const [value, setValue] = useState('');
 
   const handleKeyPress = (key: string) => {
-    setValue(prev => prev += key)
+    if (key === "AC") {
+      setValue("");
+    } else {
+      setValue(prev => prev += key)
+    }
   };
 
   return (
@@ -47,6 +51,7 @@ const styles = StyleSheet.create({
 })
 
 /*
+ * Change Button to Touchable maybe, "check online about it"
  * The hamburger opens a modal from the buttom with an animation
  * we would get the hamburger modal later
  * the button on the bottom left of the screen opens up another modal
