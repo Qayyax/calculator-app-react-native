@@ -5,6 +5,6 @@ type Props = {
 }
 export default function Hamburger({ onPress }: Props) {
   return (
-    <FontAwesome name='bars' size={24} onPress={onPress} color='yellow' />
+    <FontAwesome name='bars' size={34} onPress={onPress} color='orange' />
   )
 }

@@ -1,5 +1,6 @@
 import Hamburger from "@/components/Hamburder";
 import BtnsContainer from "@/components/ui/BtnContainer";
+import OutputView from "@/components/ui/OutputView";
 import { StyleSheet, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
@@ -12,6 +13,7 @@ export default function Index() {
       </View>
       {/* 2/3 */}
       <View style={styles.buttonContainer}>
+        <OutputView value="02020" />
         <BtnsContainer />
       </View>
     </SafeAreaView>
@@ -37,11 +39,6 @@ const styles = StyleSheet.create({
 })
 
 /*
- * there is the main screen which is dark right
- * the text is white
- * Then there are the button components
- * they would take a function prop too as well
- * then at the top left of the page there is an hamburger
  * The hamburger opens a modal from the buttom with an animation
  * we would get the hamburger modal later
  * the button on the bottom left of the screen opens up another modal
