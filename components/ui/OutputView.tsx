@@ -14,7 +14,9 @@ export default function OutputView({ value }: Props) {
 
 const styles = StyleSheet.create({
   container: {
-    flexWrap: 'wrap',
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'flex-end',
     borderBlockColor: 'blue',
     borderWidth: 5
   },
