@@ -4,7 +4,15 @@ import OutputView from "@/components/ui/OutputView";
 import { StyleSheet, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
+import { useState } from "react";
+
 export default function Index() {
+  const [value, setValue] = useState('');
+
+  const handleKeyPress = (key: string) => {
+    setValue(prev => prev += key)
+  };
+
   return (
     <SafeAreaView style={styles.container}>
       {/* top half 1/3 */}
@@ -13,8 +21,8 @@ export default function Index() {
       </View>
       {/* 2/3 */}
       <View style={styles.buttonContainer}>
-        <OutputView value="02020" />
-        <BtnsContainer />
+        <OutputView value={value} />
+        <BtnsContainer onPress={handleKeyPress} />
       </View>
     </SafeAreaView>
   );

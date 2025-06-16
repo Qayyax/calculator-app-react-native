@@ -2,7 +2,7 @@ import { StyleSheet, Pressable, Text, useWindowDimensions } from "react-native";
 
 type Props = {
   text: string;
-  onPress: () => void
+  onPress: (key: string) => void
   type: 'primary' | 'operators' | 'specialOperators';
 }
 
@@ -12,7 +12,7 @@ export default function Button({ text, onPress, type }: Props) {
 
   return (
     <Pressable
-      onPress={onPress}
+      onPress={() => onPress(text)}
       style={[styles.buttonContainer, { backgroundColor: bgColor, width: width / 5 }]}
     >
       <Text style={styles.text}>{text}</Text>
