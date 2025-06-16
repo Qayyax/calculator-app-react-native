@@ -1,7 +1,7 @@
 import { StyleSheet, Text, ScrollView } from "react-native"
 
 type Props = {
-  value?: string;
+  value?: string[];
 }
 
 export default function OutputView({ value }: Props) {

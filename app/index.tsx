@@ -7,13 +7,13 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { useState } from "react";
 
 export default function Index() {
-  const [value, setValue] = useState('');
+  const [value, setValue] = useState<string[]>([]);
 
   const handleKeyPress = (key: string) => {
     if (key === "AC") {
-      setValue("");
+      setValue([]);
     } else {
-      setValue(prev => prev += key)
+      setValue(prev => [...prev, key])
     }
   };
 
