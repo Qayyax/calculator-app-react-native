@@ -1,25 +1,32 @@
-import { StyleSheet, Text, ScrollView } from "react-native"
-
+import { StyleSheet, Text, View, FlatList } from "react-native"
 type Props = {
   value?: string[];
 }
 
 export default function OutputView({ value }: Props) {
   return (
-    // need to chage to FlatList for better view
-    <ScrollView contentContainerStyle={styles.container} horizontal>
-      <Text style={styles.text}>{value}</Text>
-    </ScrollView>
+    <View style={styles.container} >
+      <FlatList
+        data={value}
+        renderItem={({ item }) => <Text style={styles.text}>{item}</Text>}
+        horizontal
+        scrollEnabled
+        contentContainerStyle={styles.flatList}
+      />
+    </View>
   )
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'flex-end',
     borderBlockColor: 'blue',
     borderWidth: 5
+  },
+  flatList: {
+    flex: 1,
+    justifyContent: 'flex-end',
+    alignItems: 'center'
   },
   text: {
     color: '#fff',
