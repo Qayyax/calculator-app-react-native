@@ -12,6 +12,9 @@ export default function Index() {
   const handleKeyPress = (key: string) => {
     if (key === "AC") {
       if (value.length > 0) {
+        // so the thing is, when there is answer on the screen, 
+        // it should clear, 
+        // so there would be another state, when answer is swapped with value
         setValue(prev => prev.slice(0, -1))
       } else {
         setValue([]);
