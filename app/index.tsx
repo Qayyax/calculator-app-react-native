@@ -11,7 +11,11 @@ export default function Index() {
 
   const handleKeyPress = (key: string) => {
     if (key === "AC") {
-      setValue([]);
+      if (value.length > 0) {
+        setValue(prev => prev.slice(0, -1))
+      } else {
+        setValue([]);
+      }
     } else {
       setValue(prev => [...prev, key])
     }
