@@ -9,3 +9,26 @@
 // if expression
 // string before expression <expression> string after expression <expre> string
 // solve
+const calculateExpression = (expression: string[]): string => {
+
+}
+
+const multiply = (left: number, right: number) => {
+  return left * right;
+};
+
+const add = (left: number, right: number) => {
+  return left + right;
+};
+
+const subtract = (left: number, right: number) => {
+  return left - right;
+};
+
+const divide = (left: number, right: number) => {
+  return left / right;
+};
+
+const convertPercent = (value: number) => {
+  return value / 100;
+}
