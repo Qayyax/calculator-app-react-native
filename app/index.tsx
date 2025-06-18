@@ -13,20 +13,22 @@ export default function Index() {
 
   const handleKeyPress = (key: string) => {
     if (key === "AC") {
-      if (value.length > 0) {
+      if (answer) {
+        setValue("");
+        setAnswer("")
+      }
+      else if (value.length > 0) {
         // so the thing is, when there is answer on the screen, 
         // it should clear, 
         // so there would be another state, when answer is swapped with value
         setValue(prev => prev.slice(0, -1))
-      } else if (answer) {
-        setValue("");
-        setAnswer("")
-      }
-      else {
+      } else {
         setValue("");
       }
     } else if (key === '=') {
       setAnswer(calculateExpression(value))
+      // need to do something about this, 
+      // everytime I have to press enter twice
       setValue(answer)
 
     } else {
