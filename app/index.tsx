@@ -9,13 +9,13 @@ import { calculateExpression } from "@/util/calculation";
 
 export default function Index() {
   const [value, setValue] = useState<string>("");
-  const [answer, setAnswer] = useState("");
+  const [isAnswered, setIsAnswered] = useState(false);
 
   const handleKeyPress = (key: string) => {
     if (key === "AC") {
-      if (answer) {
+      if (isAnswered) {
         setValue("");
-        setAnswer("")
+        setIsAnswered(false)
       }
       else if (value.length > 0) {
         // so the thing is, when there is answer on the screen, 
@@ -26,10 +26,8 @@ export default function Index() {
         setValue("");
       }
     } else if (key === '=') {
-      setAnswer(calculateExpression(value))
-      // need to do something about this, 
-      // everytime I have to press enter twice
-      setValue(answer)
+      setValue(calculateExpression(value))
+      setIsAnswered(true)
 
     } else {
       setValue(prev => prev += key)
