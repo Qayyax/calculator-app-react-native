@@ -9,26 +9,13 @@
 // if expression
 // string before expression <expression> string after expression <expre> string
 // solve
-const calculateExpression = (expression: string[]): string => {
 
+const calculateExpression = (expression: string): string => {
+  //[4, 5, 23, *, 12, 23, 23, 23 * 23]
+  let newExpression = expression.replaceAll("\u{00D7}", "*");
+  newExpression = newExpression.replaceAll("\u{00F7}", "/")
+  console.log(newExpression)
+  return String(eval(newExpression));
 }
 
-const multiply = (left: number, right: number) => {
-  return left * right;
-};
-
-const add = (left: number, right: number) => {
-  return left + right;
-};
-
-const subtract = (left: number, right: number) => {
-  return left - right;
-};
-
-const divide = (left: number, right: number) => {
-  return left / right;
-};
-
-const convertPercent = (value: number) => {
-  return value / 100;
-}
+export { calculateExpression };

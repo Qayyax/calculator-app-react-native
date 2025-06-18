@@ -1,13 +1,15 @@
+import { useMemo } from "react";
 import { StyleSheet, Text, View, FlatList } from "react-native"
 type Props = {
-  value?: string[];
+  value: string;
 }
 
 export default function OutputView({ value }: Props) {
+  const valueArr = useMemo(() => value.split(""), [value])
   return (
     <View style={styles.container} >
       <FlatList
-        data={value}
+        data={valueArr}
         renderItem={({ item }) => <Text style={styles.text}>{item}</Text>}
         horizontal
         scrollEnabled

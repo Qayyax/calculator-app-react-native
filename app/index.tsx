@@ -5,9 +5,11 @@ import { StyleSheet, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 import { useState } from "react";
+import { calculateExpression } from "@/util/calculation";
 
 export default function Index() {
-  const [value, setValue] = useState<string[]>([]);
+  const [value, setValue] = useState<string>("");
+  const [answer, setAnswer] = useState("");
 
   const handleKeyPress = (key: string) => {
     if (key === "AC") {
@@ -16,11 +18,19 @@ export default function Index() {
         // it should clear, 
         // so there would be another state, when answer is swapped with value
         setValue(prev => prev.slice(0, -1))
-      } else {
-        setValue([]);
+      } else if (answer) {
+        setValue("");
+        setAnswer("")
       }
+      else {
+        setValue("");
+      }
+    } else if (key === '=') {
+      setAnswer(calculateExpression(value))
+      setValue(answer)
+
     } else {
-      setValue(prev => [...prev, key])
+      setValue(prev => prev += key)
     }
   };
 
