@@ -18,9 +18,6 @@ export default function Index() {
         setIsAnswered(false)
       }
       else if (value.length > 0) {
-        // so the thing is, when there is answer on the screen, 
-        // it should clear, 
-        // so there would be another state, when answer is swapped with value
         setValue(prev => prev.slice(0, -1))
       } else {
         setValue("");
@@ -30,7 +27,7 @@ export default function Index() {
       setValue(answer)
       // to ensure pressing = on 5* or 3+ (things like that)
       // doesn't trigger AC to clear
-      if (/\d$/.test(answer)) setIsAnswered(true)
+      if (/\d$/.test(answer) || /%$/.test(answer)) setIsAnswered(true)
 
     } else {
       setValue(prev => prev += key)
