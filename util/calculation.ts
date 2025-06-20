@@ -11,12 +11,15 @@
 // solve
 
 const calculateExpression = (expression: string): string => {
-  //[4, 5, 23, *, 12, 23, 23, 23 * 23]
-  let newExpression = expression.replaceAll("\u{00D7}", "*");
-  newExpression = newExpression.replaceAll("\u{00F7}", "/")
-  let answer = eval(newExpression)
-  console.log(`Expresssion: ${newExpression} \n Answer: ${answer}`)
-  return String(answer);
+  if (/\d$/.test(expression)) {
+    let newExpression = expression.replaceAll("\u{00D7}", "*");
+    newExpression = newExpression.replaceAll("\u{00F7}", "/")
+    let answer = eval(newExpression)
+    console.log(`Expresssion: ${newExpression} \n Answer: ${answer}`)
+    return String(answer);
+
+  }
+  return expression
 }
 
 export { calculateExpression };

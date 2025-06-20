@@ -26,8 +26,11 @@ export default function Index() {
         setValue("");
       }
     } else if (key === '=') {
-      setValue(calculateExpression(value))
-      setIsAnswered(true)
+      const answer = calculateExpression(value)
+      setValue(answer)
+      // to ensure pressing = on 5* or 3+ (things like that)
+      // doesn't trigger AC to clear
+      if (/\d$/.test(answer)) setIsAnswered(true)
 
     } else {
       setValue(prev => prev += key)
